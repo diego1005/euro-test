@@ -1,0 +1,36 @@
+<%- include("./partials/head") %>
+<link rel="stylesheet" href="/css/home.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <img id="main-logo" src="/img/logo.png" alt="logo">
+    </header>
+
+    <main>
+        <div class="main-section">
+            <% for(let i=0; i < titles.length; i++) { %>
+                <article class="article-box">
+                    <h2 class="article-title">
+                        <%= titles[i] %>
+                    </h2>
+                    <div class="control-box">
+                        <select id="control-select" name="<%= titles[i] %>">
+                            <% for(let j=0; j < title_arrays[i].length; j++) { %>
+                                <option value="<%= title_arrays[i][j].name %>">
+                                    <%= title_arrays[i][j].name %>
+                                </option>
+                                <% } %>
+                        </select>
+                        <a id="control-btn" href="/products/detail">Ir</a>
+                    </div>
+                </article>
+                <% } %>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.main-header {
+    width: 70vw;
+    padding: 1%;
+    margin: 5% auto;
+}
+
+#main-logo {
+    width: 100%;
+    margin: auto;
+}
