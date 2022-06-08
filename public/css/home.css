@@ -21,7 +21,8 @@
     background-color: white;
     padding: 2%;
     margin: 10% auto;
-    border-radius: 12px;
+    border-radius: 20px;
+    transition: box-shadow 350ms;
 }
 
 .article-box:hover {
@@ -35,16 +36,18 @@
 }
 
 #control-btn {
+    font-size: 1.3rem;
     float: right;
     color: white;
     background-color: rgba(100, 100, 100, 0.8);
     text-decoration: none;
     padding: 2% 15%;
     border-radius: 12px;
-    transition: opacity 450ms;
+    border: none;
+    transition: background-color 350ms;
 }
 
 #control-btn:hover {
     color: white;
-    opacity: 1;
+    background-color: rgba(100, 100, 100, 1);
 }

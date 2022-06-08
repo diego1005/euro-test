@@ -1,8 +1,39 @@
 <%- include("./partials/head") %>
+<link rel="stylesheet" href="/css/detail.css">
 </head>
 
 <body>
-    Este es el detalle de actividad
+
+    <%- include("./partials/header.ejs") %> 
+    <main>
+        <div class="main-title">
+            <%= title %>
+        </div>
+        <section class="main-section">
+            <% for(let el of prod) { %>
+            <article class="control-row">
+                <div class="control">
+                    <p><%= el.fecha %></p>
+                </div>
+                <div class="control">
+                    <p><%= el.tipo %></p>
+                </div>
+                <div class="control-desc">
+                    <p><%= el.insumo %></p>
+                </div>
+                <div class="control">
+                    <p><%= el.ancho %></p>
+                </div>
+                <div class="control">
+                    <p><%= el.alto %></p>
+                </div>
+                <div class="control">
+                    <p>total</p>
+                </div>
+            </article>
+            <% } %>
+        </section>
+    </main>
 </body>
 
 </html>

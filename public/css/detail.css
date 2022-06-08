@@ -1,0 +1,24 @@
+.main-title {
+    font-weight: bold;
+    padding-left: 5%;
+}
+
+.main-section {
+    width: 100%;
+}
+
+.control-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.control {
+    width: 10%;
+    border: 1px solid black;
+}
+
+.control-desc {
+    width: 45%;
+    border: 1px solid black;
+}
