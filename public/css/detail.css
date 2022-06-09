@@ -1,24 +1,96 @@
 .main-title {
+    display: flex;
+    align-items: center;
     font-weight: bold;
     padding-left: 5%;
 }
 
+.main-title p {
+    margin: 0 5%;
+}
+
 .main-section {
-    width: 100%;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+.ctrl-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2% 0;
 }
 
 .control-row {
     display: flex;
     justify-content: space-around;
-    margin-top: 5%;
+    margin-top: 2%;
+}
+
+.ctrl-form {
+    width: 14%;
+}
+
+.ctrl-form *{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 4%;
+}
+
+.ctrl-btn {
+    width: 5%;
+}
+
+.ctrl-btn input {
+    font-size: 3rem;
+    font-weight: bold;
+    color: green;
+    background-color: transparent;
+}
+
+.ctrl-desc{
+    width: 35%;
+}
+
+.ctrl-desc input {
+    padding: 1.5%;
+}
+
+.control, .control-desc {
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 0.5%;
+}
+
+.ctrl-title {
+    color: white;
+    background-color: black;
+    padding: 0.5%;
+}
+
+.control-total {
+    width: 10%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 4px;
+    border: 1px solid black;
 }
 
 .control {
     width: 10%;
-    border: 1px solid black;
+}
+
+.ctrl-in {
+    color: green;
+}
+
+.ctrl-eg {
+    color: red;
 }
 
 .control-desc {
     width: 45%;
-    border: 1px solid black;
 }

@@ -20,5 +20,3 @@ const indexController = {
 }
 
 module.exports = indexController;
-
-// "bo": boJSON, "bot": botJSON, "scr": scrJSON, "tra": traJSON, "zbr": zbrJSON,

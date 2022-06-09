@@ -4,36 +4,99 @@
 
 <body>
 
-    <%- include("./partials/header.ejs") %> 
-    <main>
-        <div class="main-title">
-            <%= title %>
-        </div>
-        <section class="main-section">
-            <% for(let el of prod) { %>
-            <article class="control-row">
-                <div class="control">
-                    <p><%= el.fecha %></p>
+    <%- include("./partials/header.ejs") %>
+        <main class="main-section">
+            <div class="main-title">
+                <div>
+                    <%= title %>
                 </div>
-                <div class="control">
-                    <p><%= el.tipo %></p>
+                <p>|</p>
+                <div class="ctrl-total">
+                    <%= total %>
                 </div>
-                <div class="control-desc">
-                    <p><%= el.insumo %></p>
+            </div>
+            <div class="add-form">
+                <form action="/products/add" method="post">
+                    <div class="ctrl-row">
+                        <div class="ctrl-form ctrl-btn">
+                            <input type="submit" value="+">
+                        </div>
+                        <input type="text" name="id" value="<%= id  %>" hidden>
+                        <input type="text" name="title" value="<%= title  %>" hidden>
+                        <div class="ctrl-form">
+                            <input type="date" name="fecha">
+                        </div>
+                        <div class="ctrl-form">
+                            <select name="tipo">
+                                <option value="INGRESO">INGRESO</option>
+                                <option value="EGRESO">EGRESO</option>
+                            </select>
+                        </div>
+                        <div class="ctrl-form ctrl-desc">
+                            <input type="text" name="descripcion" placeholder="Descripcion...">
+                        </div>
+                        <div class="ctrl-form">
+                            <input type="text" name="ancho" placeholder="Ancho...">
+                        </div>
+                        <div class="ctrl-form">
+                            <input type="text" name="alto" placeholder="Alto...">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <section>
+                <div class="control-row">
+                    <div class="control ctrl-title">FECHA</div>
+                    <div class="control ctrl-title">TIPO</div>
+                    <div class="control-desc ctrl-title">DESCRIPCION</div>
+                    <div class="control ctrl-title">ANCHO</div>
+                    <div class="control ctrl-title">ALTO</div>
+                    <div class="control ctrl-title">TOTAL</div>
                 </div>
-                <div class="control">
-                    <p><%= el.ancho %></p>
-                </div>
-                <div class="control">
-                    <p><%= el.alto %></p>
-                </div>
-                <div class="control">
-                    <p>total</p>
-                </div>
-            </article>
-            <% } %>
-        </section>
-    </main>
+                <% for(let el of prod) { %>
+                    <article class="control-row">
+                        <div class="control">
+                            <p>
+                                <%= el.fecha %>
+                            </p>
+                        </div>
+                        <% if (el.tipo==="INGRESO" ) { %>
+                            <div class="control ctrl-in">
+                                <p>
+                                    <%= el.tipo %>
+                                </p>
+                            </div>
+                            <% } else { %>
+                                <div class="control ctrl-eg">
+                                    <p>
+                                        <%= el.tipo %>
+                                    </p>
+                                </div>
+                                <% } %>
+                                    <div class="control-desc">
+                                        <p>
+                                            <%= el.descripcion %>
+                                        </p>
+                                    </div>
+                                    <div class="control">
+                                        <p>
+                                            <%= el.ancho %>
+                                        </p>
+                                    </div>
+                                    <div class="control">
+                                        <p>
+                                            <%= el.alto %>
+                                        </p>
+                                    </div>
+                                    <div class="control">
+                                        <p>
+                                            <%= el.total %>
+                                        </p>
+                                    </div>
+                    </article>
+                    <% } %>
+            </section>
+        </main>
 </body>
 
 </html>
