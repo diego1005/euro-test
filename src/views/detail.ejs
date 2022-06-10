@@ -1,5 +1,6 @@
 <%- include("./partials/head") %>
 <link rel="stylesheet" href="/css/detail.css">
+<script src="https://kit.fontawesome.com/1b35912aa7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                         <div class="ctrl-form ctrl-btn">
                             <input type="submit" value="+">
                         </div>
-                        <input type="text" name="id" value="<%= id  %>" hidden>
+                        <input type="text" name="id" value="<%= cloth_id  %>" hidden>
                         <input type="text" name="title" value="<%= title  %>" hidden>
                         <div class="ctrl-form">
                             <input type="date" name="fecha">
@@ -45,7 +46,7 @@
                 </form>
             </div>
             <section>
-                <div class="control-row">
+                <div class="row-title">
                     <div class="control ctrl-title">FECHA</div>
                     <div class="control ctrl-title">TIPO</div>
                     <div class="control-desc ctrl-title">DESCRIPCION</div>
@@ -92,6 +93,10 @@
                                         <p>
                                             <%= el.total %>
                                         </p>
+                                    </div>
+                                    <div class="control-icon">
+                                        <a href="/products/delete/<%= el.id %>/<%= title %>"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="/products/edit/<%= el.id %>"><i class="fa-regular fa-pen-to-square"></i></a>
                                     </div>
                     </article>
                     <% } %>

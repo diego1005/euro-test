@@ -50,6 +50,12 @@
     background-color: transparent;
 }
 
+.row-title {
+    display: flex;
+    justify-content: space-around;
+    width: 96.4%;
+}
+
 .ctrl-desc{
     width: 35%;
 }
@@ -92,5 +98,24 @@
 }
 
 .control-desc {
-    width: 45%;
+    width: 35%;
+}
+
+.control-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fa-trash, .fa-pen-to-square {
+    text-decoration: none;
+}
+
+.fa-trash {
+    color: brown;
+}
+
+.fa-pen-to-square {
+    color: blue;
 }
