@@ -17,15 +17,15 @@
                 </div>
             </div>
             <div class="add-form">
-                <form action="/products/add" method="post">
+                <form action="/products/<%= (edit) ? 'edit' : 'add' %>" method="post">
                     <div class="ctrl-row">
                         <div class="ctrl-form ctrl-btn">
-                            <input type="submit" value="+">
+                            <input type="submit" value="<%= (edit) ? '>>' : '+' %>">
                         </div>
                         <input type="text" name="id" value="<%= cloth_id  %>" hidden>
                         <input type="text" name="title" value="<%= title  %>" hidden>
                         <div class="ctrl-form">
-                            <input type="date" name="fecha">
+                            <input type="date" name="fecha" value="<%= (edit) ? prodE.fecha : '' %>">
                         </div>
                         <div class="ctrl-form">
                             <select name="tipo">
@@ -34,13 +34,13 @@
                             </select>
                         </div>
                         <div class="ctrl-form ctrl-desc">
-                            <input type="text" name="descripcion" placeholder="Descripcion...">
+                            <input type="text" name="descripcion" value="<%= (edit) ? prodE.descripcion : '' %>" placeholder="Descripcion...">
                         </div>
                         <div class="ctrl-form">
-                            <input type="text" name="ancho" placeholder="Ancho...">
+                            <input type="text" name="ancho" value="<%= (edit) ? prodE.ancho : '' %>" placeholder="Ancho...">
                         </div>
                         <div class="ctrl-form">
-                            <input type="text" name="alto" placeholder="Alto...">
+                            <input type="text" name="alto" value="<%= (edit) ? prodE.alto : '' %>" placeholder="Alto...">
                         </div>
                     </div>
                 </form>
@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="control-icon">
                                         <a href="/products/delete/<%= el.id %>/<%= title %>"><i class="fa-solid fa-trash"></i></a>
-                                        <a href="/products/edit/<%= el.id %>"><i class="fa-regular fa-pen-to-square"></i></a>
+                                        <a href="/products/edit/<%= el.id %>/<%= title %>"><i class="fa-regular fa-pen-to-square"></i></a>
                                     </div>
                     </article>
                     <% } %>

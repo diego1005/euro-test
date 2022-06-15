@@ -1,36 +1,308 @@
 [
-{"id":"bo1-1","fecha":"2021-01-12","tipo":"INGRESO","descripcion":"PRINTEMPS","ancho":"2.2","alto":"50"},
-{"id":"bo1-2","fecha":"2021-01-12","tipo":"EGRESO","descripcion":"Hospital","ancho":"1.375","alto":"1.8"},
-{"id":"bo1-3","fecha":"2021-01-12","tipo":"EGRESO","descripcion":"Hospital","ancho":"1.38","alto":"1.8"},
-{"id":"bo1-4","fecha":"2021-02-03","tipo":"EGRESO","descripcion":"Liliana","ancho":"0.74","alto":"2.5"},
-{"id":"bo1-5","fecha":"2021-02-03","tipo":"EGRESO","descripcion":"Liliana","ancho":"0.74","alto":"2.5"},
-{"id":"bo1-6","fecha":"2021-02-03","tipo":"EGRESO","descripcion":"Liliana","ancho":"1.46","alto":"2.5"},
-{"id":"bo1-7","fecha":"2021-02-11","tipo":"EGRESO","descripcion":"Hospital","ancho":"2.21","alto":"1.9"},
-{"id":"bo1-8","fecha":"2021-02-11","tipo":"EGRESO","descripcion":"Hospital","ancho":"2.21","alto":"1.9"},
-{"id":"bo1-9","fecha":"2021-02-11","tipo":"EGRESO","descripcion":"Hospital","ancho":"2.21","alto":"1.9"},
-{"id":"bo1-10","fecha":"2021-02-11","tipo":"EGRESO","descripcion":"Hospital","ancho":"2.21","alto":"1.9"},
-{"id":"bo1-11","fecha":"2021-02-11","tipo":"EGRESO","descripcion":"Hospital","ancho":"2.21","alto":"1.9"},
-{"id":"bo1-12","fecha":"2021-02-11","tipo":"EGRESO","descripcion":"Hospital","ancho":"2.21","alto":"1.9"},
-{"id":"bo1-13","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Raul Corti 2","ancho":"1.463","alto":"1.3"},
-{"id":"bo1-14","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Raul Corti 2","ancho":"1.302","alto":"1.3"},
-{"id":"bo1-15","fecha":"2021-09-16","tipo":"INGRESO","descripcion":"PRINTEMPS","ancho":"2.2","alto":"59.3"},
-{"id":"bo1-16","fecha":"2021-09-17","tipo":"EGRESO","descripcion":"Hospital Materno Neo Natal","ancho":"2.13","alto":"1.86"},
-{"id":"bo1-17","fecha":"2021-09-17","tipo":"EGRESO","descripcion":"Hospital Materno Neo Natal","ancho":"2.21","alto":"1.86"},
-{"id":"bo1-18","fecha":"2021-09-17","tipo":"EGRESO","descripcion":"Hospital Materno Neo Natal","ancho":"2.12","alto":"1.86"},
-{"id":"bo1-19","fecha":"2021-09-17","tipo":"EGRESO","descripcion":"Hospital Materno Neo Natal","ancho":"2.21","alto":"1.86"},
-{"id":"bo1-20","fecha":"2021-09-17","tipo":"EGRESO","descripcion":"Hospital Materno Neo Natal","ancho":"2.21","alto":"1.86"},
-{"id":"bo1-21","fecha":"2021-10-05","tipo":"EGRESO","descripcion":"Francisco Wlodeck","ancho":"1.765","alto":"1.76"},
-{"id":"bo1-22","fecha":"2021-10-05","tipo":"EGRESO","descripcion":"Francisco Wlodeck","ancho":"1.765","alto":"1.76"},
-{"id":"bo1-23","fecha":"2021-10-06","tipo":"EGRESO","descripcion":"Holly Bar","ancho":"2.54","alto":"2.4"},
-{"id":"bo1-24","fecha":"2022-03-09","tipo":"EGRESO","descripcion":"Carlos JotaBe 3","ancho":"1.87","alto":"1.55"},
-{"id":"bo1-25","fecha":"2022-03-09","tipo":"EGRESO","descripcion":"Carlos JotaBe 3","ancho":"1.87","alto":"1.55"},
-{"id":"bo1-26","fecha":"2022-03-09","tipo":"EGRESO","descripcion":"Carlos JotaBe 3","ancho":"1.87","alto":"1.35"},
-{"id":"bo1-27","fecha":"2022-03-09","tipo":"EGRESO","descripcion":"Carlos JotaBe 3","ancho":"1.87","alto":"1.35"},
-{"id":"bo1-28","fecha":"2022-03-09","tipo":"EGRESO","descripcion":"Carlos JotaBe 3","ancho":"2.14","alto":"1.84"},
-{"id":"bo1-29","fecha":"2022-03-09","tipo":"EGRESO","descripcion":"Carlos JotaBe 3","ancho":"1.14","alto":"1.55"},
-{"id":"bo1-30","fecha":"2022-04-27","tipo":"EGRESO","descripcion":"Juzgado de Paz (SP) - expte 1108","ancho":"1.62","alto":"1.7"},
-{"id":"bo1-31","fecha":"2022-04-27","tipo":"EGRESO","descripcion":"Juzgado de Paz (SP) - expte 1108","ancho":"1.62","alto":"1.7"},
-{"id":"bo1-32","fecha":"2022-04-27","tipo":"EGRESO","descripcion":"Juzgado de Paz (SP) - expte 1108","ancho":"1.62","alto":"1.7"},
-{"id":"bo1-33","fecha":"2022-04-27","tipo":"EGRESO","descripcion":"Juzgado de Paz (SP) - expte 1108","ancho":"1.62","alto":"1.7"},
-{"id":"bo1-34","fecha":"2022-04-27","tipo":"EGRESO","descripcion":"Juzgado de Paz (SP) - expte 1108","ancho":"1.62","alto":"1.7"}
+    {
+        "id": "bo1-1",
+        "fecha": "2021-01-12",
+        "tipo": "INGRESO",
+        "descripcion": "PRINTEMPS",
+        "ancho": "2.2",
+        "alto": "50",
+        "total": "50.00"
+    },
+    {
+        "id": "bo1-2",
+        "fecha": "2021-01-12",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital",
+        "ancho": "1.375",
+        "alto": "1.8",
+        "total": "48.20"
+    },
+    {
+        "id": "bo1-3",
+        "fecha": "2021-01-12",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital",
+        "ancho": "1.38",
+        "alto": "1.8",
+        "total": "46.40"
+    },
+    {
+        "id": "bo1-4",
+        "fecha": "2021-02-03",
+        "tipo": "EGRESO",
+        "descripcion": "Liliana",
+        "ancho": "0.74",
+        "alto": "2.5",
+        "total": "43.90"
+    },
+    {
+        "id": "bo1-5",
+        "fecha": "2021-02-03",
+        "tipo": "EGRESO",
+        "descripcion": "Liliana",
+        "ancho": "0.74",
+        "alto": "2.5",
+        "total": "41.40"
+    },
+    {
+        "id": "bo1-6",
+        "fecha": "2021-02-03",
+        "tipo": "EGRESO",
+        "descripcion": "Liliana",
+        "ancho": "1.46",
+        "alto": "2.5",
+        "total": "38.90"
+    },
+    {
+        "id": "bo1-7",
+        "fecha": "2021-02-11",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital",
+        "ancho": "2.21",
+        "alto": "1.9",
+        "total": "37.00"
+    },
+    {
+        "id": "bo1-8",
+        "fecha": "2021-02-11",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital",
+        "ancho": "2.21",
+        "alto": "1.9",
+        "total": "35.10"
+    },
+    {
+        "id": "bo1-9",
+        "fecha": "2021-02-11",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital",
+        "ancho": "2.21",
+        "alto": "1.9",
+        "total": "33.20"
+    },
+    {
+        "id": "bo1-10",
+        "fecha": "2021-02-11",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital",
+        "ancho": "2.21",
+        "alto": "1.9",
+        "total": "31.30"
+    },
+    {
+        "id": "bo1-11",
+        "fecha": "2021-02-11",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital",
+        "ancho": "2.21",
+        "alto": "1.9",
+        "total": "29.40"
+    },
+    {
+        "id": "bo1-12",
+        "fecha": "2021-02-11",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital",
+        "ancho": "2.21",
+        "alto": "1.9",
+        "total": "27.50"
+    },
+    {
+        "id": "bo1-13",
+        "fecha": "2021-07-29",
+        "tipo": "EGRESO",
+        "descripcion": "Raul Corti 2",
+        "ancho": "1.463",
+        "alto": "1.3",
+        "total": "26.20"
+    },
+    {
+        "id": "bo1-14",
+        "fecha": "2021-07-29",
+        "tipo": "EGRESO",
+        "descripcion": "Raul Corti 2",
+        "ancho": "1.302",
+        "alto": "1.3",
+        "total": "24.90"
+    },
+    {
+        "id": "bo1-15",
+        "fecha": "2021-09-16",
+        "tipo": "INGRESO",
+        "descripcion": "PRINTEMPS",
+        "ancho": "2.2",
+        "alto": "59.3",
+        "total": "84.20"
+    },
+    {
+        "id": "bo1-16",
+        "fecha": "2021-09-17",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital Materno Neo Natal",
+        "ancho": "2.13",
+        "alto": "1.86",
+        "total": "82.34"
+    },
+    {
+        "id": "bo1-17",
+        "fecha": "2021-09-17",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital Materno Neo Natal",
+        "ancho": "2.21",
+        "alto": "1.86",
+        "total": "80.48"
+    },
+    {
+        "id": "bo1-18",
+        "fecha": "2021-09-17",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital Materno Neo Natal",
+        "ancho": "2.12",
+        "alto": "1.86",
+        "total": "78.62"
+    },
+    {
+        "id": "bo1-19",
+        "fecha": "2021-09-17",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital Materno Neo Natal",
+        "ancho": "2.21",
+        "alto": "1.86",
+        "total": "76.76"
+    },
+    {
+        "id": "bo1-20",
+        "fecha": "2021-09-17",
+        "tipo": "EGRESO",
+        "descripcion": "Hospital Materno Neo Natal",
+        "ancho": "2.21",
+        "alto": "1.86",
+        "total": "74.90"
+    },
+    {
+        "id": "bo1-21",
+        "fecha": "2021-10-05",
+        "tipo": "EGRESO",
+        "descripcion": "Francisco Wlodeck",
+        "ancho": "1.765",
+        "alto": "1.76",
+        "total": "73.14"
+    },
+    {
+        "id": "bo1-22",
+        "fecha": "2021-10-05",
+        "tipo": "EGRESO",
+        "descripcion": "Francisco Wlodeck",
+        "ancho": "1.765",
+        "alto": "1.76",
+        "total": "71.38"
+    },
+    {
+        "id": "bo1-23",
+        "fecha": "2021-10-06",
+        "tipo": "EGRESO",
+        "descripcion": "Holly Bar",
+        "ancho": "2.54",
+        "alto": "2.4",
+        "total": "68.98"
+    },
+    {
+        "id": "bo1-24",
+        "fecha": "2022-03-09",
+        "tipo": "EGRESO",
+        "descripcion": "Carlos JotaBe 3",
+        "ancho": "1.87",
+        "alto": "1.55",
+        "total": "67.43"
+    },
+    {
+        "id": "bo1-25",
+        "fecha": "2022-03-09",
+        "tipo": "EGRESO",
+        "descripcion": "Carlos JotaBe 3",
+        "ancho": "1.87",
+        "alto": "1.55",
+        "total": "65.88"
+    },
+    {
+        "id": "bo1-26",
+        "fecha": "2022-03-09",
+        "tipo": "EGRESO",
+        "descripcion": "Carlos JotaBe 3",
+        "ancho": "1.87",
+        "alto": "1.35",
+        "total": "64.53"
+    },
+    {
+        "id": "bo1-27",
+        "fecha": "2022-03-09",
+        "tipo": "EGRESO",
+        "descripcion": "Carlos JotaBe 3",
+        "ancho": "1.87",
+        "alto": "1.35",
+        "total": "63.18"
+    },
+    {
+        "id": "bo1-28",
+        "fecha": "2022-03-09",
+        "tipo": "EGRESO",
+        "descripcion": "Carlos JotaBe 3",
+        "ancho": "2.14",
+        "alto": "1.84",
+        "total": "61.34"
+    },
+    {
+        "id": "bo1-29",
+        "fecha": "2022-03-09",
+        "tipo": "EGRESO",
+        "descripcion": "Carlos JotaBe 3",
+        "ancho": "1.14",
+        "alto": "1.55",
+        "total": "59.79"
+    },
+    {
+        "id": "bo1-30",
+        "fecha": "2022-04-27",
+        "tipo": "EGRESO",
+        "descripcion": "Juzgado de Paz (SP) - expte 1108",
+        "ancho": "1.62",
+        "alto": "1.7",
+        "total": "58.09"
+    },
+    {
+        "id": "bo1-31",
+        "fecha": "2022-04-27",
+        "tipo": "EGRESO",
+        "descripcion": "Juzgado de Paz (SP) - expte 1108",
+        "ancho": "1.62",
+        "alto": "1.7",
+        "total": "56.39"
+    },
+    {
+        "id": "bo1-32",
+        "fecha": "2022-04-27",
+        "tipo": "EGRESO",
+        "descripcion": "Juzgado de Paz (SP) - expte 1108",
+        "ancho": "1.62",
+        "alto": "1.7",
+        "total": "54.69"
+    },
+    {
+        "id": "bo1-33",
+        "fecha": "2022-04-27",
+        "tipo": "EGRESO",
+        "descripcion": "Juzgado de Paz (SP) - expte 1108",
+        "ancho": "1.62",
+        "alto": "1.7",
+        "total": "52.99"
+    },
+    {
+        "id": "bo1-34",
+        "fecha": "2022-04-27",
+        "tipo": "EGRESO",
+        "descripcion": "Juzgado de Paz (SP) - expte 1108",
+        "ancho": "1.62",
+        "alto": "1.7",
+        "total": "51.29"
+    }
 ]
