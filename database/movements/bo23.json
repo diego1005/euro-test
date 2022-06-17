@@ -1,0 +1,20 @@
+[
+{"id":"bo23-1","fecha":"2021-01-18","tipo":"EGRESO","descripcion":"Fcia. Pto. Fama Marcelo","ancho":"0.95","alto":"2.8"},
+{"id":"bo23-2","fecha":"2021-01-18","tipo":"EGRESO","descripcion":"Fcia. Pto. Fama Marcelo","ancho":"0.95","alto":"2.8"},
+{"id":"bo23-3","fecha":"2021-01-18","tipo":"EGRESO","descripcion":"Fcia. Pto. Fama Marcelo","ancho":"0.95","alto":"2.8"},
+{"id":"bo23-4","fecha":"2021-02-14","tipo":"EGRESO","descripcion":"Consultorio San Martin","ancho":"2.985","alto":"3.4"},
+{"id":"bo23-5","fecha":"2021-02-14","tipo":"EGRESO","descripcion":"Consultorio San Martin","ancho":"2.985","alto":"3.4"},
+{"id":"bo23-6","fecha":"2021-02-14","tipo":"EGRESO","descripcion":"Consultorio San Martin","ancho":"2.92","alto":"3.4"},
+{"id":"bo23-7","fecha":"2021-03-15","tipo":"EGRESO","descripcion":"Patricia","ancho":"1.37","alto":"1.4"},
+{"id":"bo23-8","fecha":"2021-03-15","tipo":"EGRESO","descripcion":"Patricia","ancho":"1.37","alto":"1.4"},
+{"id":"bo23-9","fecha":"2021-04-19","tipo":"EGRESO","descripcion":"Angel Cardozo","ancho":"1.1508","alto":"2.6"},
+{"id":"bo23-10","fecha":"2021-04-19","tipo":"EGRESO","descripcion":"Angel Cardozo","ancho":"1.87","alto":"2.6"},
+{"id":"bo23-11","fecha":"2021-04-19","tipo":"EGRESO","descripcion":"Angel Cardozo","ancho":"1.1105","alto":"3"},
+{"id":"bo23-12","fecha":"2021-04-19","tipo":"EGRESO","descripcion":"Angel Cardozo","ancho":"1.1105","alto":"3"},
+{"id":"bo23-13","fecha":"2021-04-19","tipo":"EGRESO","descripcion":"Angel Cardozo","ancho":"1.18","alto":"3"},
+{"id":"bo23-14","fecha":"2021-05-27","tipo":"EGRESO","descripcion":"Consultorio San Martin","ancho":"3.02","alto":"3.4"},
+{"id":"bo23-15","fecha":"2021-05-27","tipo":"EGRESO","descripcion":"Consultorio San Martin","ancho":"3","alto":"3.4"},
+{"id":"bo23-16","fecha":"2021-09-06","tipo":"EGRESO","descripcion":"Libreria RED","ancho":"3.594","alto":"2.6"}
+,
+{"id":"bo23-17","fecha":"2022-03-08","tipo":"INGRESO","descripcion":"ALUCA","ancho":"3","alto":"30"}
+]

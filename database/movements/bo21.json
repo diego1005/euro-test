@@ -1,0 +1,11 @@
+[
+{"id":"bo21-1","fecha":"2021-02-08","tipo":"INGRESO","descripcion":"ROLLTECH","ancho":"3","alto":"1"},
+{"id":"bo21-2","fecha":"2021-07-27","tipo":"INGRESO","descripcion":"PRINTEMPS","ancho":"3","alto":"10"},
+{"id":"bo21-3","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Esteban Berlini","ancho":"3.34","alto":"2.9"},
+{"id":"bo21-4","fecha":"2021-10-25","tipo":"EGRESO","descripcion":"Iñaki","ancho":"3.35","alto":"3"},
+{"id":"bo21-5","fecha":"2021-10-25","tipo":"EGRESO","descripcion":"Iñaki","ancho":"2.585","alto":"3"},
+{"id":"bo21-6","fecha":"2022-02-04","tipo":"EGRESO","descripcion":"DUOMO (UNAM)","ancho":"1.545","alto":"3"},
+{"id":"bo21-7","fecha":"2022-02-04","tipo":"EGRESO","descripcion":"DUOMO (UNAM)","ancho":"1.545","alto":"3"},
+{"id":"bo21-8","fecha":"2022-02-04","tipo":"EGRESO","descripcion":"DUOMO (UNAM)","ancho":"0.885","alto":"3"},
+{"id":"bo21-9","fecha":"2022-02-04","tipo":"EGRESO","descripcion":"DUOMO (UNAM)","ancho":"2.2","alto":"3"}
+]

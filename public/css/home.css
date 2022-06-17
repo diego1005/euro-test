@@ -1,6 +1,6 @@
 .main-section {
     width: 90vw;
-    margin: 8% auto;
+    margin: 3% auto 8%;
 }
 
 .article-title {
@@ -20,7 +20,7 @@
     font-size: 1.5rem;
     background-color: white;
     padding: 2%;
-    margin: 10% auto;
+    margin: 5% auto 10%;
     border-radius: 20px;
     transition: box-shadow 350ms;
 }

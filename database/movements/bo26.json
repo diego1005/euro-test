@@ -1,0 +1,17 @@
+[
+{"id":"bo26-1","fecha":"2021-03-02","tipo":"EGRESO","descripcion":"Patricia Alem","ancho":"0.9","alto":"1.6"},
+{"id":"bo26-2","fecha":"2021-03-02","tipo":"EGRESO","descripcion":"Patricia Alem","ancho":"0.9","alto":"1.6"},
+{"id":"bo26-3","fecha":"2021-03-02","tipo":"EGRESO","descripcion":"Patricia Alem","ancho":"0.4","alto":"1.6"},
+{"id":"bo26-4","fecha":"2021-03-02","tipo":"EGRESO","descripcion":"Patricia Alem","ancho":"0.4","alto":"1.6"},
+{"id":"bo26-5","fecha":"2021-03-02","tipo":"EGRESO","descripcion":"Patricia Alem","ancho":"0.4","alto":"1.6"},
+{"id":"bo26-6","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Sebastian Caffetti","ancho":"1.3","alto":"2.4"},
+{"id":"bo26-7","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Sebastian Caffetti","ancho":"1.01","alto":"1.9"},
+{"id":"bo26-8","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Sebastian Caffetti","ancho":"1.03","alto":"1.9"},
+{"id":"bo26-9","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Sebastian Caffetti","ancho":"0.9","alto":"1.9"},
+{"id":"bo26-10","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Sebastian Caffetti","ancho":"1.01","alto":"1.9"},
+{"id":"bo26-11","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Sebastian Caffetti","ancho":"1.03","alto":"1.9"},
+{"id":"bo26-12","fecha":"2021-07-29","tipo":"EGRESO","descripcion":"Sebastian Caffetti","ancho":"0.9","alto":"1.9"},
+{"id":"bo26-13","fecha":"2022-01-20","tipo":"EGRESO","descripcion":"Miriam Pintos","ancho":"0.9","alto":"1.9"},
+{"id":"bo26-14","fecha":"2022-01-21","tipo":"INGRESO","descripcion":"PRINTEMPS","ancho":"2.5","alto":"10"},
+{"id":"bo26-15","fecha":"2022-01-21","tipo":"EGRESO","descripcion":"Aurora Zimmerman","ancho":"1.75","alto":"2"}
+]
