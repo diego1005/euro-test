@@ -3,10 +3,15 @@ const router = express.Router();
 
 const productsController = require("../controller/productsController");
 
+//Mostrar lista de movimientos filtrada
 router.post("/detail", productsController.detail);
+//Agregar nuevo movimiento
 router.post("/add", productsController.add);
-router.get("/delete/:id/:title", productsController.delete);
-router.get("/edit/:id/:title", productsController.edit);
-router.post("/edit", productsController.update);
+//Cargar la vista de edicion
+router.put("/edit/:id", productsController.edit);
+//Actualizar el movimiento
+router.put("/edit", productsController.update);
+//Eliminar un movimiento
+router.delete("/delete/:id", productsController.delete);
 
 module.exports = router;

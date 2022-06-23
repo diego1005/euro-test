@@ -11,7 +11,7 @@
 
     <main>
         <div class="main-section">
-            <% for(let i=0; i < titles.length; i++) { %>
+            <% for(let i=0; i<titles.length; i++) { %>
                 <article class="article-box">
                     <h2 class="article-title">
                         <%= titles[i] %>
@@ -19,9 +19,9 @@
                     <div class="control-box">
                         <form action="/products/detail" method="POST">
                             <select id="control-select" name="cloth">
-                                <% for(let j=0; j < subtitles[i].length; j++) { %>
-                                    <option value="<%= [subtitles[i][j].id, subtitles[i][j].name] %>">
-                                         <%= subtitles[i][j].name %>
+                                <% for(let j=0; j<subtitles[i].length; j++) { %>
+                                    <option value="<%= subtitles[i][j].tela %>">
+                                         <%= subtitles[i][j].nombre %>
                                     </option>
                                     <% } %>
                                 </select>

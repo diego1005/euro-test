@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const methodOverride = require("method-override");
 
 const indexRouter = require("./routes/index.routes");
 const productsRouter = require("./routes/products.routes");
@@ -18,6 +19,7 @@ app.use("/products", productsRouter);
 
 // STATIC
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(methodOverride("_method"));
 
 // SERVER
 app.listen(port, () => {

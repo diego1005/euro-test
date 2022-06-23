@@ -1,20 +1,19 @@
 const fs = require("fs");
 const path = require("path");
 
+const filePath = path.join(__dirname, "../../database/lists/cloths_list.json");
+let clothList = fs.readFileSync(filePath, "utf-8");
+clothList = JSON.parse(clothList);
+
 const indexController = {
     home: (req, res) => {
         let titles = ["Black Out", "Sunscreen", "Traslucida", "Black Out Text", "Zebra"];
-        let bo = fs.readFileSync(path.join(__dirname, "../../database/lists/black-out.json"), "utf-8");
-        let boJSON = JSON.parse(bo);
-        let bot = fs.readFileSync(path.join(__dirname, "../../database/lists/black-out-text.json"), "utf-8");
-        let botJSON = JSON.parse(bot);
-        let scr = fs.readFileSync(path.join(__dirname, "../../database/lists/sunscreen.json"), "utf-8");
-        let scrJSON = JSON.parse(scr);
-        let tra = fs.readFileSync(path.join(__dirname, "../../database/lists/traslucida.json"), "utf-8");
-        let traJSON = JSON.parse(tra);
-        let zbr = fs.readFileSync(path.join(__dirname, "../../database/lists/zebra.json"), "utf-8");
-        let zbrJSON = JSON.parse(zbr);
-        let subtitles = [boJSON, scrJSON, traJSON, botJSON, zbrJSON];
+        let bo = clothList.filter(el => el.tela.includes("bo") && !el.tela.includes("bot"));
+        let bot = clothList.filter(el => el.tela.includes("bot"));
+        let scr = clothList.filter(el => el.tela.includes("scr"));
+        let tra = clothList.filter(el => el.tela.includes("tra"));
+        let zbr = clothList.filter(el => el.tela.includes("zbr"));
+        let subtitles = [bo, scr, tra, bot, zbr];
         res.render("home", {titles: titles, subtitles: subtitles});
     }
 }

@@ -1,66 +1,60 @@
 const fs = require("fs");
 const path = require("path");
 
+const filePath = path.join(__dirname, '../../database/mov_list.json');
+let movList = fs.readFileSync(filePath, "utf-8");
+movList = JSON.parse(movList);
+
 const productsController = {
     detail: (req, res) => {
-        let data = req.body.cloth.split(",");
-        let prod = fs.readFileSync(path.join(__dirname, `../../database/movements/${data[0]}.json`), "utf-8");
-        let prodJSON = JSON.parse(prod);
-        let total = totalizar(prodJSON);
-        res.render("detail", { title: data[1], prod: prodJSON, total: total, cloth_id: data[0], edit: false });
+        let tela = req.body.cloth;
+        let prodList = movList.filter(el => el.tela == tela);
+        let title = prodList[0].descripcion;
+        let total = totalizar(prodList);
+        res.render("detail", { title: title, prod: prodList, total: total, edit: false });
     },
     add: (req, res) => {
-        let data = req.body;
-        let cloth_id = data.id;
-        let title = data.title;
-        delete data.title
-        let prod = fs.readFileSync(path.join(__dirname, `../../database/movements/${cloth_id}.json`), "utf-8");
-        let prodJSON = JSON.parse(prod);
-        let ultimo = prodJSON.length + 1;
-        data.id = `${cloth_id}-${ultimo}`;
-        prodJSON.push(data);
-        let sortProdJSON = prodJSON.sort((a, b) => Date.parse(a.fecha) - Date.parse(b.fecha));
-        let total = totalizar(prodJSON);
-        prod = JSON.stringify(sortProdJSON);
-        fs.writeFileSync(path.join(__dirname, `../../database/movements/${cloth_id}.json`), prod);
-        res.render("detail", { title: title, prod: sortProdJSON, total: total, cloth_id: cloth_id, edit: false });
+        let new_prod = req.body;
+        let title = new_prod.descripcion;
+        let len = movList.length;
+        new_prod = {id: movList[len-1].id + 1, ...new_prod};
+        movList.push(new_prod);
+        movList = movList.sort((a, b) => Date.parse(a.fecha) - Date.parse(b.fecha));
+        let prodList = movList.filter(el => el.tela == new_prod.tela);
+        let total = totalizar(prodList);
+        let write_movList = JSON.stringify(movList);
+        fs.writeFileSync(filePath, write_movList);
+        res.render("detail", { title: title, prod: prodList, total: total, edit: false });
     },
     edit: (req, res) => {
-        let data = req.params.id.split("-");
-        let movId = req.params.id;
-        let title = req.params.title;
-        let prod = fs.readFileSync(path.join(__dirname, `../../database/movements/${data[0]}.json`), "utf-8");
-        let prodJSON = JSON.parse(prod);
-        let prodEdit = prodJSON.find(el => el.id == movId);
-        let total = totalizar(prodJSON);
-        res.render("detail", { title: title, prod: prodJSON, prodE: prodEdit, cloth_id: movId, total: total, edit: true });
+        let prodEdit = movList.find(el => el.id == req.params.id);
+        let title = prodEdit.descripcion;
+        let prodList = movList.filter(el => el.tela == prodEdit.tela);
+        let total = totalizar(prodList);
+        res.render("detail", { title: title, prod: prodList, prodE: prodEdit, total: total, edit: true });
     },
     update: (req, res) => {
-        let data = req.body;
-        let cloth_id = data.id.split("-");
-        let title = data.title;
-        delete data.title;
-        let prod = fs.readFileSync(path.join(__dirname, `../../database/movements/${cloth_id[0]}.json`), "utf-8");
-        let prodJSON = JSON.parse(prod);
-        prodJSON = prodJSON.filter(el => el.id != data.id);
-        prodJSON.push(data);
-        let sortProdJSON = prodJSON.sort((a, b) => Date.parse(a.fecha) - Date.parse(b.fecha));
-        let total = totalizar(prodJSON);
-        prod = JSON.stringify(sortProdJSON);
-        fs.writeFileSync(path.join(__dirname, `../../database/movements/${cloth_id[0]}.json`), prod);
-        res.render("detail", { title: title, prod: sortProdJSON, total: total, cloth_id: cloth_id, edit: false });
+        let prodEdit = req.body;
+        movList = movList.filter(el => el.id != prodEdit.id);
+        movList.push(prodEdit);
+        let title = prodEdit.descripcion;
+        movList = movList.sort((a, b) => Date.parse(a.fecha) - Date.parse(b.fecha));
+        let prodList = movList.filter(el => el.tela == prodEdit.tela);
+        let total = totalizar(prodList);
+        let write_movList = JSON.stringify(movList);
+        fs.writeFileSync(filePath, write_movList);
+        res.render("detail", { title: title, prod: prodList, total: total, edit: false });
     },
     delete: (req, res) => {
-        let title = req.params.title;
-        let data = req.params.id.split("-");
-        let prod = fs.readFileSync(path.join(__dirname, `../../database/movements/${data[0]}.json`), "utf-8");
-        let prodJSON = JSON.parse(prod);
-        prodJSON = prodJSON.filter(e => e.id != req.params.id);
-        let sortProdJSON = prodJSON.sort((a, b) => Date.parse(a.fecha) - Date.parse(b.fecha));
-        let total = totalizar(prodJSON);
-        prod = JSON.stringify(sortProdJSON);
-        fs.writeFileSync(path.join(__dirname, `../../database/movements/${data[0]}.json`), prod);
-        res.render("detail", { title: title, prod: sortProdJSON, total: total, cloth_id: data[0], edit: false });
+        let prodDel = movList.find(el => el.id == req.params.id);
+        let title = prodDel.descripcion;
+        movList = movList.filter(e => e.id != req.params.id);
+        movList = movList.sort((a, b) => Date.parse(a.fecha) - Date.parse(b.fecha));
+        let prodList = movList.filter(el => el.tela == prodDel.tela);
+        let total = totalizar(prodList);
+        let write_movList = JSON.stringify(movList);
+        fs.writeFileSync(filePath, write_movList);
+        res.render("detail", { title: title, prod: prodList, total: total, edit: false });
     }
 }
 

@@ -1,25 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 
-let prod = fs.readFileSync(path.join(__dirname, "/database/movements/" + "bo1.json"), "utf-8");
-let prodJSON = JSON.parse(prod);
-// console.log(prodJSON)
-let total = totalizar(0, prodJSON);
+const filePath = path.join(__dirname, '/database/lists/cloth_list.json');
+let prod = fs.readFileSync(filePath, "utf-8");
+prod = JSON.parse(prod);
 
-console.log(total);
 
-function totalizar(ini, lista) {
-    let total = ini;
-    // let arr = [];
-    // for (let i in lista) {
-    //     arr.push(lista[i])
-    // }
-    for (let el of lista) {
-        if (el.tipo === "INGRESO") {
-            total += parseFloat(el.alto);
-        } else if (el.tipo === "EGRESO") {
-            total -= parseFloat(el.alto);
-        }
-    }
-    return total;
-}
+prod= prod.map((el, idx) => el = {id: idx+1, ...el});
+prod = JSON.stringify(prod);
+fs.writeFileSync(path.join(__dirname, '/database/lists/cloths_list.json'), prod);
+
+
+
+

@@ -1,107 +1,115 @@
 <%- include("./partials/head") %>
-<link rel="stylesheet" href="/css/detail.css">
-<script src="https://kit.fontawesome.com/1b35912aa7.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="/css/detail.css">
+    <script src="https://kit.fontawesome.com/1b35912aa7.js" crossorigin="anonymous"></script>
+    </head>
 
-<body>
+    <body>
 
-    <%- include("./partials/header.ejs") %>
-        <main class="main-section">
-            <div class="main-title">
-                <div>
-                    <%= title %>
-                </div>
-                <p>|</p>
-                <div class="ctrl-total">
-                    <%= total %>
-                </div>
-            </div>
-            <div class="add-form">
-                <form action="/products/<%= (edit) ? 'edit' : 'add' %>" method="post">
-                    <div class="ctrl-row">
-                        <div class="ctrl-form ctrl-btn">
-                            <input type="submit" value="<%= (edit) ? '>>' : '+' %>">
-                        </div>
-                        <input type="text" name="id" value="<%= cloth_id  %>" hidden>
-                        <input type="text" name="title" value="<%= title  %>" hidden>
-                        <div class="ctrl-form">
-                            <input type="date" name="fecha" value="<%= (edit) ? prodE.fecha : '' %>">
-                        </div>
-                        <div class="ctrl-form">
-                            <select name="tipo">
-                                <option value="INGRESO">INGRESO</option>
-                                <option value="EGRESO">EGRESO</option>
-                            </select>
-                        </div>
-                        <div class="ctrl-form ctrl-desc">
-                            <input type="text" name="descripcion" value="<%= (edit) ? prodE.descripcion : '' %>" placeholder="Descripcion...">
-                        </div>
-                        <div class="ctrl-form">
-                            <input type="text" name="ancho" value="<%= (edit) ? prodE.ancho : '' %>" placeholder="Ancho...">
-                        </div>
-                        <div class="ctrl-form">
-                            <input type="text" name="alto" value="<%= (edit) ? prodE.alto : '' %>" placeholder="Alto...">
-                        </div>
+        <%- include("./partials/header.ejs") %>
+            <main class="main-section">
+                <div class="main-title">
+                    <div>
+                        <%= title %>
                     </div>
-                </form>
-            </div>
-            <section>
-                <div class="row-title">
-                    <div class="control ctrl-title">FECHA</div>
-                    <div class="control ctrl-title">TIPO</div>
-                    <div class="control-desc ctrl-title">DESCRIPCION</div>
-                    <div class="control ctrl-title">ANCHO</div>
-                    <div class="control ctrl-title">ALTO</div>
-                    <div class="control ctrl-title">TOTAL</div>
+                    <p>|</p>
+                    <div class="ctrl-total">
+                        <%= total %>
+                    </div>
                 </div>
-                <% for(let el of prod) { %>
-                    <article class="control-row">
-                        <div class="control">
-                            <p>
-                                <%= el.fecha %>
-                            </p>
+                <div class="add-form">
+                    <form action="/products/<%= (edit) ? 'edit?_method=PUT' : 'add' %>" method="POST">
+                        <div class="ctrl-row">
+                            <div class="ctrl-form ctrl-btn">
+                                <input type="submit" value="<%= (edit) ? '>>' : '+' %>">
+                            </div>
+                            <input type="text" name="id" value="<%= (edit) ? prodE.id : '' %>" hidden>
+                            <input type="text" name="tela" value="<%= prod[0].tela %>" hidden>
+                            <div class="ctrl-form">
+                                <input type="date" name="fecha" value="<%= (edit) ? prodE.fecha : '' %>">
+                            </div>
+                            <div class="ctrl-form">
+                                <select name="tipo">
+                                    <option value="INGRESO">INGRESO</option>
+                                    <option value="EGRESO">EGRESO</option>
+                                </select>
+                            </div>
+                            <input type="text" name="descripcion" value="<%= prod[0].descripcion %>" hidden>
+                            <div class="ctrl-form ctrl-desc">
+                                <input type="text" name="prov_cli" value="<%= (edit) ? prodE.descripcion : '' %>"
+                                    placeholder="Descripcion...">
+                            </div>
+                            <div class="ctrl-form">
+                                <input type="text" name="ancho" value="<%= (edit) ? prodE.ancho : '' %>"
+                                    placeholder="Ancho...">
+                            </div>
+                            <div class="ctrl-form">
+                                <input type="text" name="alto" value="<%= (edit) ? prodE.alto : '' %>"
+                                    placeholder="Alto...">
+                            </div>
                         </div>
-                        <% if (el.tipo==="INGRESO" ) { %>
-                            <div class="control ctrl-in">
+                    </form>
+                </div>
+                <section>
+                    <div class="row-title">
+                        <div class="control ctrl-title">FECHA</div>
+                        <div class="control ctrl-title">TIPO</div>
+                        <div class="control-desc ctrl-title">DESCRIPCION</div>
+                        <div class="control ctrl-title">ANCHO</div>
+                        <div class="control ctrl-title">ALTO</div>
+                        <div class="control ctrl-title">TOTAL</div>
+                    </div>
+                    <% for(let el of prod) { %>
+                        <article class="control-row">
+                            <div class="control">
                                 <p>
-                                    <%= el.tipo %>
+                                    <%= el.fecha %>
                                 </p>
                             </div>
-                            <% } else { %>
-                                <div class="control ctrl-eg">
+                            <% if (el.tipo==="INGRESO" ) { %>
+                                <div class="control ctrl-in">
                                     <p>
                                         <%= el.tipo %>
                                     </p>
                                 </div>
-                                <% } %>
-                                    <div class="control-desc">
+                                <% } else { %>
+                                    <div class="control ctrl-eg">
                                         <p>
-                                            <%= el.descripcion %>
+                                            <%= el.tipo %>
                                         </p>
                                     </div>
-                                    <div class="control">
-                                        <p>
-                                            <%= el.ancho %>
-                                        </p>
-                                    </div>
-                                    <div class="control">
-                                        <p>
-                                            <%= el.alto %>
-                                        </p>
-                                    </div>
-                                    <div class="control">
-                                        <p>
-                                            <%= el.total %>
-                                        </p>
-                                    </div>
-                                    <div class="control-icon">
-                                        <a href="/products/delete/<%= el.id %>/<%= title %>"><i class="fa-solid fa-trash"></i></a>
-                                        <a href="/products/edit/<%= el.id %>/<%= title %>"><i class="fa-regular fa-pen-to-square"></i></a>
-                                    </div>
-                    </article>
-                    <% } %>
-            </section>
-        </main>
-</body>
+                                    <% } %>
+                                <div class="control-desc">
+                                    <p>
+                                        <%= el.prov_cli %>
+                                    </p>
+                                </div>
+                                <div class="control">
+                                    <p>
+                                        <%= el.ancho %>
+                                    </p>
+                                </div>
+                                <div class="control">
+                                    <p>
+                                        <%= el.alto %>
+                                    </p>
+                                </div>
+                                <div class="control">
+                                    <p>
+                                        <%= el.total %>
+                                    </p>
+                                </div>
+                                <div class="control-icon">
+                                    <form action="/products/delete/<%= el.id %>?_method=DELETE" method="POST">
+                                        <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
+                                    <form action="/products/edit/<%= el.id %>?_method=PUT" method="POST">
+                                        <button type="submit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                    </form>
+                                </div>
+                        </article>
+                        <% } %>
+                </section>
+            </main>
+    </body>
 
-</html>
+    </html>
