@@ -13,13 +13,15 @@ app.use(express.json());
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"));
 
+// MIDDLEWARES
+//-STATIC
+app.use(express.static(path.join(__dirname, "../public")));
+//-METHOD
+app.use(methodOverride('_method'));
+
 // ROUTER
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
-
-// STATIC
-app.use(express.static(path.join(__dirname, "../public")));
-app.use(methodOverride("_method"));
 
 // SERVER
 app.listen(port, () => {

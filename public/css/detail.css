@@ -27,6 +27,16 @@
     margin-top: 2%;
 }
 
+.control-row:hover {
+    box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+    padding: 1%;
+
+}
+
+.control-row:hover .control-icon {
+    display: flex;
+}
+
 .ctrl-form {
     width: 14%;
 }
@@ -53,7 +63,6 @@
 .row-title {
     display: flex;
     justify-content: space-around;
-    width: 96.4%;
 }
 
 .ctrl-desc{
@@ -102,10 +111,17 @@
 }
 
 .control-icon {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
+    cursor: pointer;
     align-items: center;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .fa-trash, .fa-pen-to-square {

@@ -17,7 +17,7 @@ const productsController = {
         let new_prod = req.body;
         let title = new_prod.descripcion;
         let len = movList.length;
-        new_prod = {id: movList[len-1].id + 1, ...new_prod};
+        new_prod.id = movList[len-1].id + 1;
         movList.push(new_prod);
         movList = movList.sort((a, b) => Date.parse(a.fecha) - Date.parse(b.fecha));
         let prodList = movList.filter(el => el.tela == new_prod.tela);

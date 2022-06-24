@@ -17,10 +17,10 @@
                     </div>
                 </div>
                 <div class="add-form">
-                    <form action="/products/<%= (edit) ? 'edit?_method=PUT' : 'add' %>" method="POST">
+                    <form action="/products/<%= (edit) ? 'edit/?_method=PUT' : 'add' %>" method="POST">
                         <div class="ctrl-row">
                             <div class="ctrl-form ctrl-btn">
-                                <input type="submit" value="<%= (edit) ? '>>' : '+' %>">
+                                <input type="submit" value="<%= (edit) ? '>' : '+' %>">
                             </div>
                             <input type="text" name="id" value="<%= (edit) ? prodE.id : '' %>" hidden>
                             <input type="text" name="tela" value="<%= prod[0].tela %>" hidden>
@@ -35,7 +35,7 @@
                             </div>
                             <input type="text" name="descripcion" value="<%= prod[0].descripcion %>" hidden>
                             <div class="ctrl-form ctrl-desc">
-                                <input type="text" name="prov_cli" value="<%= (edit) ? prodE.descripcion : '' %>"
+                                <input type="text" name="prov_cli" value="<%= (edit) ? prodE.prov_cli : '' %>"
                                     placeholder="Descripcion...">
                             </div>
                             <div class="ctrl-form">
@@ -99,11 +99,10 @@
                                     </p>
                                 </div>
                                 <div class="control-icon">
-                                    <form action="/products/delete/<%= el.id %>?_method=DELETE" method="POST">
-                                        <button type="submit"><i class="fa-solid fa-trash"></i></button>
-                                    </form>
-                                    <form action="/products/edit/<%= el.id %>?_method=PUT" method="POST">
-                                        <button type="submit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <form action="/products/delete/<%= el.id %>?_method=DELETE" method="POST">
+                                            <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                        </form>
+                                        <a href="/products/edit/<%= el.id %>"><i class="fa-regular fa-pen-to-square"></i></a>
                                     </form>
                                 </div>
                         </article>
