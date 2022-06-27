@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="add-form">
-                    <form action="/products/<%= (edit) ? 'edit/?_method=PUT' : 'add' %>" method="POST">
+                    <form action="/products/<%= (edit) ? 'edit/?_method=PUT' : 'create' %>" method="POST">
                         <div class="ctrl-row">
                             <div class="ctrl-form ctrl-btn">
                                 <input type="submit" value="<%= (edit) ? '>' : '+' %>">

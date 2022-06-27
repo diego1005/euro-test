@@ -1,9 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
-const filePath = path.join(__dirname, '/database/mov2_list.json');
-let prod = fs.readFileSync(filePath, "utf-8");
-prod = JSON.parse(prod);
+const filePath = path.join(__dirname, '/database/mov/mov_list.json');
+const dir = path.join(__dirname, "/database/cuts/");
+let prod = require(filePath)
 
 
 let recs = prod.map(el =>  {
@@ -17,7 +17,9 @@ let recs = prod.map(el =>  {
     return el;
 })
 
-console.log(recs);
+recs = JSON.stringify(recs);
+
+fs.writeFileSync(`${dir}cut_list.json`, recs);
 
 // prod= prod.map((el, idx) => el = {id: idx+1, ...el});
 // prod = JSON.stringify(prod);

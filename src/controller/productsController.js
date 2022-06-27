@@ -1,29 +1,21 @@
 const fs = require("fs");
 const path = require("path");
 
-const filePath = path.join(__dirname, '../../database/mov2_list.json');
-let movList = fs.readFileSync(filePath, "utf-8");
-movList = JSON.parse(movList);
+const f_modules = require("../../public/js/f_modules");
+
+const filePath = path.join(__dirname, '../../database/mov/mov_list.json');
+let movList = require(filePath);
 
 const productsController = {
     detail: (req, res) => {
         let cod_tela = req.body.cloth;
-        let prodList = movList.filter(el => el.cod_tela == cod_tela);
-        let title = prodList[0].descripcion;
-        let total = totalizar(prodList);
+        let { title, prodList, total } = f_modules.show(cod_tela, movList);
         res.render("detail", { title: title, prod: prodList, total: total, edit: false });
     },
-    add: (req, res) => {
+    create: (req, res) => {
         let new_prod = req.body;
-        let title = new_prod.descripcion;
-        let len = movList.length;
-        new_prod.id = movList[len-1].id + 1;
-        movList.push(new_prod);
-        movList = movList.sort((a, b) => Date.parse(a.fecha) - Date.parse(b.fecha));
-        let prodList = movList.filter(el => el.cod_tela == new_prod.cod_tela);
-        let total = totalizar(prodList);
-        let write_movList = JSON.stringify(movList);
-        fs.writeFileSync(filePath, write_movList);
+        movList = f_modules.add(new_prod, movList);
+        let { title, prodList, total} = f_modules.show(new_prod.cod_tela, movList);
         res.render("detail", { title: title, prod: prodList, total: total, edit: false });
     },
     edit: (req, res) => {
@@ -56,20 +48,6 @@ const productsController = {
         fs.writeFileSync(filePath, write_movList);
         res.render("detail", { title: title, prod: prodList, total: total, edit: false });
     }
-}
-
-function totalizar(arr) {
-    let acum = 0;
-    for (let el of arr) {
-        if (el.tipo === "INGRESO") {
-            acum += parseFloat(el.alto);
-            el.total = acum.toFixed(2);
-        } else if (el.tipo === "EGRESO") {
-            acum -= parseFloat(el.alto);
-            el.total = acum.toFixed(2);
-        }
-    }
-    return acum.toFixed(2);
 }
 
 module.exports = productsController;
